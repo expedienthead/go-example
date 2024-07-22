@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/expedienthead/go-example/points"
+	"github.com/expedienthead/go-points"
 )
 
 func main() {
