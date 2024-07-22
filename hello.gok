@@ -1,0 +1,266 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+// const (
+// 	bronze = iota
+// 	silver
+// 	gold
+// )
+
+// var membershipNames = [3]string{"bronze", "silver", "gold"}
+
+// func somethingDangerous() {
+// 	rand.Seed(time.Now().UnixNano())
+// 	n := rand.Intn(100) + 3
+
+// 	defer func() {
+// 		// fmt.Println("Really important")
+// 		if r := recover(); r != nil {
+// 			fmt.Println("This is the recovery function")
+// 		}
+// 	}()
+
+// 	fmt.Println("Before Panic")
+
+// 	fmt.Println("Your membership:", membershipNames[n])
+// }
+
+func PrintWordCounts(wordCounts map[string]int) {
+	for key, value := range wordCounts {
+		fmt.Println(key, value)
+	}
+}
+
+func CountWords(message string) (map[string]int, int) {
+	message = strings.ReplaceAll(message, ".", "")
+	message = strings.ReplaceAll(message, ",", "")
+	message = strings.ToLower(message)
+
+	wordCounts := make(map[string]int)
+
+	words := strings.Fields(message)
+
+	for _, word := range words {
+		wordCounts[word]++
+	}
+
+	return wordCounts, len(wordCounts)
+}
+
+func main() {
+	// data := '༗'
+	// fmt.Println(data)
+	// fmt.Printf("%c\n", data)
+	// name := "Ćaleb"
+	// last := "Curry"
+
+	// name = name + " " + last
+	// // fmt.Println(name)
+
+	// runes := []rune(name)
+	// runes = append(runes, '!')
+
+	// runes[3] = '!'
+
+	// fmt.Println(string(runes))
+	// fmt.Println(name)
+
+	// names := [...]string{"Caleb", "Kayla", "Carrie", "Connor"}
+	// fmt.Println(names)
+
+	// data := names[:]
+	// fmt.Println(data)
+
+	// for i, name := range names {
+	// 	fmt.Println(i, name)
+	// }
+	// data := names[:]
+
+	// data := names[:]
+	// fmt.Println(data)
+	// data[1] = "Something else"
+	// fmt.Println(names)
+
+	// data = append(data, "more")
+	// data[2] = "CHANGED!"
+	// fmt.Println(names)
+	// fmt.Println(data)
+
+	// x := 10
+	// x++
+	// y := 3
+	// y--
+
+	// fmt.Println(x, y)
+
+	// fmt.Println(x + int32(y))
+
+	// fmt.Println(x / y)
+	// fmt.Println(float64(x) / float64(y))
+
+	// data := [...]int{5, 10, 34, 90, 100}
+	// fmt.Println(data)
+	// for i, _ := range data {
+	// 	data[i] += 5
+	// }
+	// fmt.Println(data)
+
+	// var x int = -1000
+	// var y uint = math.MaxInt32
+
+	// fmt.Println(x, y)
+
+	// fmt.Println(int32(y))
+
+	// x := 10
+	// y := 3
+
+	// fmt.Println(x / y)
+
+	// const bonus uint32 = 10
+	// var points uint64 = uint64(bonus)
+	// const bonus = 10
+	// points := bonus
+	// fmt.Println(points)
+
+	// for i := 0; i < 5; i++ {
+	// 	if i == 3 {
+	// 		// break
+	// 		continue
+	// 	}
+	// 	fmt.Println(i)
+	// }
+
+	// for {
+	// 	fmt.Println("loop")
+	// }
+
+	// reader := bufio.NewReader(os.Stdin)
+
+	// fmt.Print("Enter membership status (bronze = 0, silver = 1, gold = 2): ")
+
+	// text, _ := reader.ReadString('\n')
+
+	// text = strings.TrimSpace(text)
+
+	// membership, _ := strconv.ParseInt(text, 10, 64)
+
+	// var membership int
+	// var membership2 int
+	// fmt.Scan(&membership)
+	// fmt.Scanln(&membership2)
+	// fmt.Scan(&membership, &membership2)
+
+	// fmt.Println(membership, membershipNames[membership])
+	// fmt.Println(membership2, membershipNames[membership2])
+
+	// if membership == 0 {
+	// 	fmt.Println("You have the cheapest membership. Want to upgrade?")
+	// } else if membership == 1 {
+	// 	fmt.Println("You're in our most common memebership. Congrats!")
+	// } else if membership == 2 {
+	// 	fmt.Println("You're a premium customer. Thank you for the support")
+	// } else {
+	// 	fmt.Println("You do not have a valid membership")
+	// }
+
+	// paymentUpToDate := true
+
+	// if (membership == 0 || membership == 1 || membership == 2) && paymentUpToDate {
+	// 	fmt.Println("You are a member!")
+	// } else {
+	// 	fmt.Println("You do not have a valid membership")
+	// }
+
+	// Loop:
+	// for {
+
+	// 	var membership int
+	// 	fmt.Scan(&membership)
+
+	// 	if membership >= 0 && membership < 3 {
+	// 		fmt.Println("You have a valid membership")
+	// 		break
+	// 	}
+
+	// 	fmt.Println("You do not have a valid membership. Try again")
+
+	// switch membership {
+	// case 0, 1, 2:
+	// 	fmt.Println("You have a valid membership")
+	// 	break Loop
+	// default:
+	// 	fmt.Println("You do not have a valid membership")
+	// }
+	// }
+
+	// reader := bufio.NewReader(os.Stdin)
+
+	// var num int64
+	// for {
+	// 	result, err := reader.ReadString('\n')
+
+	// 	fmt.Println(result, err)
+
+	// 	if err != nil {
+	// 		fmt.Println("Something went wrong with the reader", err)
+	// 		continue
+	// 	}
+
+	// 	result = strings.TrimSpace(result)
+
+	// 	// fmt.Println(result, err)
+	// 	num, err = strconv.ParseInt(result, 10, 8)
+
+	// 	if err != nil {
+	// 		fmt.Println("Something went wrong with parsing. Try again.")
+	// 		continue
+	// 	}
+
+	// 	if num < 0 || num >= int64(len(membershipNames)) {
+	// 		fmt.Println("Please provide a valid number")
+	// 		continue
+	// 	}
+	// 	break
+	// }
+
+	// panic("Something went wrong")
+
+	// somethingDangerous()
+	// fmt.Println("After Panic")
+
+	// animals := map[string]int{"dogs": 5, "cats": 3}
+	// animals["turtle"] = 2
+	// animals["dogs"]++
+	// fmt.Println(animals["dogs"])
+	// animals["dogs"] = 10
+	// fmt.Println(animals["sharks"])
+
+	// delete(animals, "dogs")
+
+	// value, ok := animals["sharks"]
+
+	// if ok {
+	// 	fmt.Println(value)
+	// } else {
+	// 	fmt.Println("Key and associated value not found")
+	// }
+
+	// for key, value := range animals {
+	// 	fmt.Println(key, value)
+	// }
+
+	message := `In an ancient world, where skies shimmered purple, a purple young girl named Elara lived.
+	She discovered an ancient purple map, hidden in her purple attic, leading to an unknown treasure.
+	Brimming with excitement, Elara embarked on her journey, accompanied by her loyal dog, Max.`
+
+	wordCounts, _ := CountWords(message)
+	PrintWordCounts(wordCounts)
+	fmt.Println(len(wordCounts))
+
+	// PrintWordCounts(CountWords("This is another example."))
+}
